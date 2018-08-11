@@ -1,0 +1,123 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
+namespace WindowsFormsApp1
+{
+    public partial class CashierCommission : Form
+    {
+        public Dashadmin ref_dashadmin { get; set; }
+        public MySqlConnection conn;
+        public CashierCommission()
+        {
+            InitializeComponent();
+            conn = new MySqlConnection("Server=localhost;Database=dcgwaps;Uid=root;Pwd=root;SslMode=none");
+        }
+
+        public void Rifreeesh()
+        {
+            try
+            {
+                conn.Open();
+                String query = "SELECT e.fname, e.lname, c.mon_salary, c.allowance, c.sal_date FROM cashier_employee c INNER JOIN employee e ON c.emp_id = e.id;";
+                MySqlCommand comm = new MySqlCommand(query, conn);
+                MySqlDataAdapter adp = new MySqlDataAdapter(comm);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                conn.Close();
+
+                cashierEmpGrid.DataSource = dt;
+                cashierEmpGrid.Columns["fname"].HeaderText = "First Name";
+                cashierEmpGrid.Columns["lname"].HeaderText = "Last Name";
+                cashierEmpGrid.Columns["mon_salary"].HeaderText = "Salary";
+                cashierEmpGrid.Columns["allowance"].HeaderText = "Allowance";
+                cashierEmpGrid.Columns["sal_date"].HeaderText = "Date";
+
+
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+                conn.Close();
+            }
+        }
+
+        private void CashierCommission_Load(object sender, EventArgs e)
+        {
+            Rifreeesh();
+            fillcombo_emp();
+        }
+
+        public void fillcombo_emp()
+        {
+            string empquery = "SELECT CONCAT(fname,' ', lname) FROM employee WHERE position = 'Cashier' AND status = 'Active';";
+            MySqlCommand empcom = new MySqlCommand(empquery, conn);
+            try
+            {
+                conn.Open();
+                MySqlDataReader myReader = empcom.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    string name = myReader.GetString(0);
+                    empCombo.Items.Add(name);
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+
+            }
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            int empIdInt = empCombo.SelectedIndex;
+
+            try
+            {
+                if (empCombo.Text == "")
+                {
+                    MessageBox.Show("Enter credentials");
+                }
+                else
+                {
+                    if (MessageBox.Show("Do you want to add the data?", "Confirm ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        conn.Open();
+                        
+                        String query = "call updCashierEmp(" + empIdInt + ", " + int.Parse(allowance.Text) + ")";
+                        MySqlCommand comm = new MySqlCommand(query, conn);
+                        comm.ExecuteNonQuery();
+
+                        conn.Close();
+                    }
+                    MessageBox.Show("Cashier Commission Added", "Updated Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Rifreeesh();
+                }
+
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+                conn.Close();
+            }
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            Dashadmin admin = new Dashadmin();
+            admin.ref_cashiercomm = this;
+            admin.Show();
+            this.Close();
+        }
+    }
+}
