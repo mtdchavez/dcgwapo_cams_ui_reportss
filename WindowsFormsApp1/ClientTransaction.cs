@@ -149,11 +149,6 @@ namespace WindowsFormsApp1
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 

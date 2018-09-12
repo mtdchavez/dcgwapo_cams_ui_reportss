@@ -42,6 +42,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.backlabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.reservedGrid)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -236,6 +238,35 @@
             this.backlabel.Text = "back";
             this.backlabel.Click += new System.EventHandler(this.backlabel_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(655, 97);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 18);
+            this.label7.TabIndex = 68;
+            this.label7.Text = "PRINT";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(615, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 82);
+            this.button1.TabIndex = 67;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // ClientTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,6 +275,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(789, 725);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.reservedGrid);
             this.Controls.Add(this.backlabel);
             this.Controls.Add(this.addLogs);
@@ -278,5 +311,7 @@
         private System.Windows.Forms.Label backlabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }
