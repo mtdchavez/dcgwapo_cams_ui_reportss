@@ -42,7 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.con_num = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.branchidInt = new System.Windows.Forms.ComboBox();
+            this.branchCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lname = new System.Windows.Forms.TextBox();
             this.mname = new System.Windows.Forms.TextBox();
@@ -94,7 +94,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.con_num);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.branchidInt);
+            this.panel1.Controls.Add(this.branchCombo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lname);
             this.panel1.Controls.Add(this.mname);
@@ -239,14 +239,14 @@
             this.label5.TabIndex = 61;
             this.label5.Text = "Contact Number";
             // 
-            // branchidInt
+            // branchCombo
             // 
-            this.branchidInt.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.branchidInt.FormattingEnabled = true;
-            this.branchidInt.Location = new System.Drawing.Point(154, 17);
-            this.branchidInt.Name = "branchidInt";
-            this.branchidInt.Size = new System.Drawing.Size(217, 27);
-            this.branchidInt.TabIndex = 59;
+            this.branchCombo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.branchCombo.FormattingEnabled = true;
+            this.branchCombo.Location = new System.Drawing.Point(154, 17);
+            this.branchCombo.Name = "branchCombo";
+            this.branchCombo.Size = new System.Drawing.Size(217, 27);
+            this.branchCombo.TabIndex = 59;
             // 
             // label1
             // 
@@ -578,7 +578,7 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox branchidInt;
+        private System.Windows.Forms.ComboBox branchCombo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox lname;
         private System.Windows.Forms.TextBox mname;

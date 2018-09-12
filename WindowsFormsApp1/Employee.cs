@@ -141,9 +141,9 @@ namespace WindowsFormsApp1
             drd.Close();
             conn.Close();
 
-            branchidInt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            branchidInt.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            branchidInt.AutoCompleteCustomSource = branchCollection;
+            branchCombo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            branchCombo.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            branchCombo.AutoCompleteCustomSource = branchCollection;
         }
         public void fillcombo_branch()
         {
@@ -157,7 +157,7 @@ namespace WindowsFormsApp1
                 while (myReader.Read())
                 {
                     string name = myReader.GetString(0);
-                    branchidInt.Items.Add(name);
+                    branchCombo.Items.Add(name);
                 }
                 conn.Close();
             }
@@ -177,7 +177,7 @@ namespace WindowsFormsApp1
         {
             String fn, mn, ln, conNo, bday, uname, status;
             selected_branch_id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
-            branchidInt.Text = dataGridView1.Rows[e.RowIndex].Cells["name"].Value.ToString();
+            branchCombo.Text = dataGridView1.Rows[e.RowIndex].Cells["name"].Value.ToString();
             fn = dataGridView1.Rows[e.RowIndex].Cells["fname"].Value.ToString();
             mn = dataGridView1.Rows[e.RowIndex].Cells["mname"].Value.ToString();
             ln = dataGridView1.Rows[e.RowIndex].Cells["lname"].Value.ToString();
@@ -206,11 +206,6 @@ namespace WindowsFormsApp1
             username.Text = uname;
         }
 
-        private void back_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void addEmp_Click(object sender, EventArgs e)
         {
             conn.Close();
@@ -219,6 +214,11 @@ namespace WindowsFormsApp1
             cashierRB.Enabled = true;
             int branchidInt;
 
+            //serviceCombo
+            conn.Open();
+
+            MySqlCommand getBranchID = new MySqlCommand("SELECT ID FROM branch WHERE NAME LIKE'%" + branchCombo.Text + "%')", conn);
+            branchidInt = Convert.ToInt32(getBranchID.ExecuteScalar());
 
             try
             {
@@ -268,17 +268,13 @@ namespace WindowsFormsApp1
                         Rifreeesh();
                     }
                 }
-
-
             }
             catch (Exception ee)
             {
                 MessageBox.Show(ee.ToString());
                 conn.Close();
             }
-
         }
-
         private void backBtn_Click(object sender, EventArgs e)
         {
             Dashadmin admin = new Dashadmin();
