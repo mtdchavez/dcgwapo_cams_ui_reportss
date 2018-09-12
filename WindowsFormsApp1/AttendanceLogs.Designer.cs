@@ -66,7 +66,7 @@
             this.tabPage2.Controls.Add(this.timeInGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 21);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage2.Size = new System.Drawing.Size(511, 260);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Time In";
@@ -86,13 +86,14 @@
             this.timeInGrid.Size = new System.Drawing.Size(511, 259);
             this.timeInGrid.TabIndex = 1;
             this.timeInGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.timeInGrid_CellClick);
+            this.timeInGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.timeInGrid_CellContentClick);
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.timeOutGrid);
             this.tabPage3.Location = new System.Drawing.Point(4, 21);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage3.Size = new System.Drawing.Size(511, 260);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Time Out";
@@ -213,7 +214,7 @@
             this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(442, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 67);
             this.button1.TabIndex = 61;
@@ -234,7 +235,7 @@
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.attendanceTab);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AttendanceLogs";
             this.Text = "Attendance Logs";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AttendanceLogs_FormClosing);

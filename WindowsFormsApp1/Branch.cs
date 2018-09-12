@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Branch : Form
     {
+        public ViewBranch ref_branch1 { get; set; }
         public Dashadmin ref_dashadmin { get; set; }
         public MySqlConnection conn;
 
@@ -66,6 +67,12 @@ namespace WindowsFormsApp1
         private void Branch_Load_1(object sender, EventArgs e)
         {
             Rifreeesh();
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            dataGridView1.Columns.Add(btn);
+            btn.HeaderText = "Action";
+            btn.Text = "View";
+            btn.Name = "btn";
+            btn.UseColumnTextForButtonValue = true;
         }
 
         private void addbranch_Click(object sender, EventArgs e)
@@ -154,16 +161,24 @@ namespace WindowsFormsApp1
                 conn.Close();
             }
         }
+        public static int selected_branch_id; //get the branch_id
+        public static string selected_name;
+        public static string selected_location;
+        public static string selected_city;
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             String id, name, location, city, status;
-
+            selected_branch_id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
             id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
             name = dataGridView1.Rows[e.RowIndex].Cells["name"].Value.ToString();
             location = dataGridView1.Rows[e.RowIndex].Cells["location"].Value.ToString();
             city = dataGridView1.Rows[e.RowIndex].Cells["city"].Value.ToString();
             status = dataGridView1.Rows[e.RowIndex].Cells["status"].Value.ToString();
+
+            selected_name = name;
+            selected_location = location;
+            selected_city = city;
 
             bridtext.Text = id;
             brnametxt.Text = name;
@@ -261,18 +276,38 @@ namespace WindowsFormsApp1
                 conn.Close();
             }
         }
-
-        private void bridtext_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             BranchPrint br = new BranchPrint();
             br.ref_dashadmin = this;
             br.Show();
             this.Hide();
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            Dashadmin admin = new Dashadmin();
+            admin.ref_branch = this;
+            admin.Show();
+            this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                //TODO - Button Clicked - Execute Code Here 
+                ViewBranch viiew = new ViewBranch();
+                //viiew.ref_branch1 = this;
+                viiew.Show();
+            }
+        }
+        public static implicit operator DataGridViewButtonColumn(Branch v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

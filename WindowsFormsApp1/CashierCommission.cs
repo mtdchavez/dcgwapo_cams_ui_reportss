@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
             try
             {
                 conn.Open();
-                String query = "SELECT e.fname, e.lname, c.mon_salary, c.allowance, c.sal_date FROM cashier_employee c INNER JOIN employee e ON c.emp_id = e.id;";
+                String query = "SELECT e.id, e.fname, e.lname, c.mon_salary, c.allowance, c.sal_date FROM cashier_employee c INNER JOIN employee e ON c.emp_id = e.id;";
                 MySqlCommand comm = new MySqlCommand(query, conn);
                 MySqlDataAdapter adp = new MySqlDataAdapter(comm);
                 DataTable dt = new DataTable();
@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
                 conn.Close();
 
                 cashierEmpGrid.DataSource = dt;
+                cashierEmpGrid.Columns["id"].Visible = false;
                 cashierEmpGrid.Columns["fname"].HeaderText = "First Name";
                 cashierEmpGrid.Columns["lname"].HeaderText = "Last Name";
                 cashierEmpGrid.Columns["mon_salary"].HeaderText = "Salary";
@@ -79,9 +80,7 @@ namespace WindowsFormsApp1
         }
 
         private void addBtn_Click(object sender, EventArgs e)
-        {
-            int empIdInt = empCombo.SelectedIndex;
-
+        {            
             try
             {
                 if (empCombo.Text == "")
@@ -94,7 +93,7 @@ namespace WindowsFormsApp1
                     {
                         conn.Open();
                         
-                        String query = "call updCashierEmp(" + empIdInt + ", " + int.Parse(allowance.Text) + ")";
+                        String query = "UPDATE cashier_employee SET mon_salary = 1500.00, allowance = " + double.Parse(allowance.Text) + " WHERE emp_id = " + empID + ";";
                         MySqlCommand comm = new MySqlCommand(query, conn);
                         comm.ExecuteNonQuery();
 
@@ -118,6 +117,15 @@ namespace WindowsFormsApp1
             admin.ref_cashiercomm = this;
             admin.Show();
             this.Close();
+        }
+
+        public static int empID;
+        private void cashierEmpGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > -1)
+            {
+                empID = int.Parse(cashierEmpGrid.Rows[e.RowIndex].Cells["id"].Value.ToString());
+            }
         }
     }
 }

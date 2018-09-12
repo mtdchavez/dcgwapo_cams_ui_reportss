@@ -83,6 +83,7 @@
             this.PastBarbSal.TabIndex = 72;
             this.PastBarbSal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.PastBarbSal.UseVisualStyleBackColor = false;
+            this.PastBarbSal.Click += new System.EventHandler(this.PastBarbSal_Click);
             // 
             // dataGridView1
             // 
@@ -120,7 +121,8 @@
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.PastBarbSal);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "BarberCommission";
             this.Text = "BarberCommission";
             this.Load += new System.EventHandler(this.BarberCommission_Load);

@@ -112,7 +112,7 @@ namespace WindowsFormsApp1
             Dashcashier cashiir = new Dashcashier();
             cashiir.ref_dashcashier = this;
             cashiir.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

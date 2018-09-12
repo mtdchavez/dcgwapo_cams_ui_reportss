@@ -39,6 +39,8 @@
             this.tIDlabel = new System.Windows.Forms.Label();
             this.backlabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Change = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label5
@@ -85,6 +87,8 @@
             this.payamtTxt.Name = "payamtTxt";
             this.payamtTxt.Size = new System.Drawing.Size(142, 31);
             this.payamtTxt.TabIndex = 59;
+            this.payamtTxt.TextChanged += new System.EventHandler(this.payamtTxt_TextChanged);
+            this.payamtTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.payamtTxt_KeyPress);
             // 
             // payBtn
             // 
@@ -93,7 +97,7 @@
             this.payBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.payBtn.Location = new System.Drawing.Point(92, 197);
+            this.payBtn.Location = new System.Drawing.Point(92, 230);
             this.payBtn.Name = "payBtn";
             this.payBtn.Size = new System.Drawing.Size(95, 63);
             this.payBtn.TabIndex = 60;
@@ -107,7 +111,7 @@
             this.cancelBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cancelBtn.Location = new System.Drawing.Point(195, 197);
+            this.cancelBtn.Location = new System.Drawing.Point(195, 230);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(95, 63);
             this.cancelBtn.TabIndex = 60;
@@ -120,7 +124,7 @@
             this.amtLabel.BackColor = System.Drawing.Color.Transparent;
             this.amtLabel.Font = new System.Drawing.Font("Arial", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amtLabel.ForeColor = System.Drawing.Color.White;
-            this.amtLabel.Location = new System.Drawing.Point(198, 90);
+            this.amtLabel.Location = new System.Drawing.Point(209, 85);
             this.amtLabel.Name = "amtLabel";
             this.amtLabel.Size = new System.Drawing.Size(22, 24);
             this.amtLabel.TabIndex = 61;
@@ -145,7 +149,7 @@
             this.backlabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backlabel.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backlabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.backlabel.Location = new System.Drawing.Point(130, 263);
+            this.backlabel.Location = new System.Drawing.Point(130, 296);
             this.backlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.backlabel.Name = "backlabel";
             this.backlabel.Size = new System.Drawing.Size(26, 14);
@@ -159,12 +163,33 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(225, 263);
+            this.label1.Location = new System.Drawing.Point(225, 296);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 14);
             this.label1.TabIndex = 64;
             this.label1.Text = "Cancel";
+            // 
+            // Change
+            // 
+            this.Change.Font = new System.Drawing.Font("Arial", 15.5F);
+            this.Change.Location = new System.Drawing.Point(159, 157);
+            this.Change.Multiline = true;
+            this.Change.Name = "Change";
+            this.Change.Size = new System.Drawing.Size(142, 31);
+            this.Change.TabIndex = 65;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(52, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 27);
+            this.label3.TabIndex = 66;
+            this.label3.Text = "Change :";
             // 
             // Payment
             // 
@@ -173,7 +198,9 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(364, 302);
+            this.ClientSize = new System.Drawing.Size(364, 334);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Change);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.backlabel);
             this.Controls.Add(this.tIDlabel);
@@ -184,7 +211,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Payment";
             this.Text = "Payment";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Payment_FormClosing);
@@ -206,5 +233,7 @@
         private System.Windows.Forms.Label tIDlabel;
         private System.Windows.Forms.Label backlabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox Change;
+        private System.Windows.Forms.Label label3;
     }
 }

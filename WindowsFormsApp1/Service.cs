@@ -41,7 +41,6 @@ namespace WindowsFormsApp1
                 dataGridView1.Columns["price"].HeaderText = "Price";
                 dataGridView1.Columns["status"].HeaderText = "Status";
 
-
             }
             catch (Exception ee)
             {
@@ -62,18 +61,23 @@ namespace WindowsFormsApp1
 
         private void back_Click(object sender, EventArgs e)
         {
+            Dashadmin admin = new Dashadmin();
+            admin.ref_service = this;
+            admin.Show();
             this.Close();
+
         }
 
         private void activeBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                status(0);
+                status("Active");
                 Rifreeesh();
                 activeBtn.Enabled = false;
                 inactBtn.Enabled = true;
-                MessageBox.Show("The service will not be available for that branch");
+                MessageBox.Show("The service will be available for that branch");
+
             }
             catch (Exception ee)
             {
@@ -86,11 +90,12 @@ namespace WindowsFormsApp1
         {
             try
             {
-                status(1);
+                status("Inactive");
                 Rifreeesh();
                 activeBtn.Enabled = true;
                 inactBtn.Enabled = false;
-                MessageBox.Show("The service will be available for that branch");
+                MessageBox.Show("The service will not be available for that branch");
+
             }
             catch (Exception ee)
             {
@@ -99,7 +104,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void status(int x)
+        private void status(String x)
         {
             try
             {
@@ -116,17 +121,23 @@ namespace WindowsFormsApp1
             }
         }
 
+        public static int selected_branch_id;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            String status;
+            String id, name, description, price, status;
 
-            /*id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+            id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
             name = dataGridView1.Rows[e.RowIndex].Cells["name"].Value.ToString();
             description = dataGridView1.Rows[e.RowIndex].Cells["description"].Value.ToString();
-            price = dataGridView1.Rows[e.RowIndex].Cells["price"].Value.ToString();*/
+            price = dataGridView1.Rows[e.RowIndex].Cells["price"].Value.ToString();
             status = dataGridView1.Rows[e.RowIndex].Cells["status"].Value.ToString();
 
-            if(status == "0")
+            seridtext.Text = id;
+            serv_name.Text = name;
+            desc.Text = description;
+            prc.Text = price;
+
+            if (status == "Active")
             {
                 activeBtn.Enabled = false;
                 inactBtn.Enabled = true;
@@ -137,6 +148,16 @@ namespace WindowsFormsApp1
                 inactBtn.Enabled = false;
             }
 
+
+
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            Dashadmin admin = new Dashadmin();
+            admin.ref_service = this;
+            admin.Show();
+            this.Close();
         }
     }
 }

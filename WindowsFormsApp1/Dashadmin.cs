@@ -67,5 +67,48 @@ namespace WindowsFormsApp1
             log.Show();
             this.Close();
         }
+
+        private void Dashadmin_Load(object sender, EventArgs e)
+        {
+            checkTransfer();
+        }
+        public void checkTransfer()
+        {
+            int count = 0;
+            conn.Open();
+
+            MySqlCommand getTransferCount = new MySqlCommand("SELECT * FROM EMPLOYEE_TRANSFER WHERE DATE_TO < NOW()", conn);
+            count = Convert.ToInt32(getTransferCount.ExecuteScalar());
+
+            if (count >= 1)
+            {
+                notificationLbl.Visible = true;
+            }
+            conn.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            log.ref_dashadmin = this;
+            log.Show();
+            this.Close();
+        }
+
+        private void notificationLbl_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Barber employee transfer has already end his duty, retrieve him now", "Okay", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Branch br = new Branch();
+                br.ref_dashadmin = this;
+                br.Show();
+                this.Hide();
+            }
+        }
+
+        private void notifications_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

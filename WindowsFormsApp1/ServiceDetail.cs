@@ -26,7 +26,8 @@ namespace WindowsFormsApp1
             try
             {
                 conn.Open();
-                String query = "SELECT sd.id, s.name, s.price, sd.added_on FROM service_details sd INNER JOIN service s ON sd.service_id = s.id WHERE client_transaction_id = " + ClientTransaction.selected_trans_id+ "";
+                String query = "SELECT sd.id, s.name, s.price, sd.added_on FROM service_details sd " +
+                    "INNER JOIN service s ON sd.service_id = s.id WHERE client_transaction_id = " + ClientTransaction.selected_trans_id+ "";
                 MySqlCommand comm = new MySqlCommand(query, conn);
                 MySqlDataAdapter adp = new MySqlDataAdapter(comm);
                 DataTable dt = new DataTable();
@@ -39,10 +40,11 @@ namespace WindowsFormsApp1
                 servicesGrid.Columns["price"].HeaderText = "Price";
                 servicesGrid.Columns["added_on"].HeaderText = "Transaction Date";
                 total_this();
+
+                selected_amt = double.Parse(amtLabel.Text);
             }
             catch (Exception ee)
             {
-                MessageBox.Show(ee.ToString());
                 conn.Close();
             }
         }
@@ -55,7 +57,7 @@ namespace WindowsFormsApp1
                 total += double.Parse(servicesGrid.Rows[i].Cells["price"].Value.ToString());
             }
             amtLabel.Text = total.ToString("#,###.##");
-            selected_amt = double.Parse(amtLabel.Text);
+            
         }
 
         public static int selected_trans_id;
@@ -66,7 +68,6 @@ namespace WindowsFormsApp1
         {
             Rifreeesh();
             tIDlabel.Text = string.Concat(ClientTransaction.selected_trans_id);
-            clientNameLbl.Text = ClientTransaction.kliyente;
             amtLabel.Text =  ClientTransaction.selected_amount;
             statusLabel.Text = ClientTransaction.selected_status;
             fillcombo_barber();
@@ -82,11 +83,12 @@ namespace WindowsFormsApp1
                 barberCombo.Enabled = false;
                 serviceCombo.Enabled = false;
             }
+            
         }
 
         public void fillcombo_barber()
         {
-            string empquery = "SELECT e.fname, e.lname FROM employee e INNER JOIN barber_employee b ON b.emp_id = e.id INNER JOIN attendance_log a ON a.emp_id = e.id WHERE e.branch_id = " + GlobalVariables.User_Branch_ID + " AND date(time_in) = curdate();";
+            string empquery = "SELECT CONCAT(e.fname, ' ', e.lname) FROM employee e INNER JOIN barber_employee b ON b.emp_id = e.id INNER JOIN attendance_log a ON a.emp_id = e.id WHERE e.branch_id = " + GlobalVariables.User_Branch_ID + " AND date(time_in) = curdate() AND io = 'Time In'";
             MySqlCommand barbercom = new MySqlCommand(empquery, conn);
             try
             {
@@ -109,7 +111,7 @@ namespace WindowsFormsApp1
  
         public void fillcombo_service()
         {
-            string servicequery = "SELECT name, price FROM service WHERE branch_id = "+ GlobalVariables.User_Branch_ID +"";
+            string servicequery = "SELECT CONCAT(name, '/', price) FROM service WHERE branch_id = " + GlobalVariables.User_Branch_ID + " AND status = 'Active' ";
             MySqlCommand servicecom = new MySqlCommand(servicequery, conn);
             try
             {
@@ -131,8 +133,18 @@ namespace WindowsFormsApp1
 
         private void addOrd_Click(object sender, EventArgs e)
         {
-            int barberIdInt = barberCombo.SelectedIndex + 1;
-            int serviceIdInt = serviceCombo.SelectedIndex + 1;
+            int barberIdInt;
+            int serviceIdInt;
+
+            //serviceCombo
+            conn.Open();
+
+            MySqlCommand getBarberID = new MySqlCommand("SELECT ID FROM EMPLOYEE WHERE (CONCAT(FNAME, ' ', LNAME) LIKE'%" + barberCombo.Text + "%')", conn);
+            barberIdInt = Convert.ToInt32(getBarberID.ExecuteScalar());
+
+            MySqlCommand getServiceID = new MySqlCommand("SELECT ID FROM SERVICE WHERE CONCAT(name, '/', price) LIKE'%" + serviceCombo.Text + "%'",conn);
+            serviceIdInt = Convert.ToInt32(getServiceID.ExecuteScalar());
+
 
             try
             {
@@ -144,7 +156,7 @@ namespace WindowsFormsApp1
                 {
                     if (MessageBox.Show("Do you want to add the data?", "Confirm ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        conn.Open();
+                        
 
                         String query = "CALL addOrder("+ tIDlabel.Text +", "+ barberIdInt +", "+ serviceIdInt +");";
                         MySqlCommand comm = new MySqlCommand(query, conn);
@@ -154,8 +166,6 @@ namespace WindowsFormsApp1
                     }
                     MessageBox.Show("New order has been added", "Updated Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Rifreeesh();
-                    //amtLabel.Text = ClientTransaction.selected_amount;
-                    //amtLabel.Refresh();
                 }
 
             }
@@ -207,5 +217,6 @@ namespace WindowsFormsApp1
             orders.Show();
             this.Hide();
         }
+        
     }
 }

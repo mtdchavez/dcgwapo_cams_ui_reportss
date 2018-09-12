@@ -83,6 +83,12 @@
       <DependentUpon>BranchReports.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BranchSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BranchSale.Designer.cs">
+      <DependentUpon>BranchSale.cs</DependentUpon>
+    </Compile>
     <Compile Include="CashierCommission.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="PastBarberSal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PastBarberSal.Designer.cs">
+      <DependentUpon>PastBarberSal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +176,30 @@
     <Compile Include="ServicePrint.Designer.cs">
       <DependentUpon>ServicePrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="SetingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetingsForm.Designer.cs">
+      <DependentUpon>SetingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransBranch.Designer.cs">
+      <DependentUpon>TransBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransbranchPermanent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransbranchPermanent.Designer.cs">
+      <DependentUpon>TransbranchPermanent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewBranch.Designer.cs">
+      <DependentUpon>ViewBranch.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AttendanceLogs.resx">
       <DependentUpon>AttendanceLogs.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +215,9 @@
     <EmbeddedResource Include="BranchReports.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BranchReports.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BranchSale.resx">
+      <DependentUpon>BranchSale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CashierCommission.resx">
       <DependentUpon>CashierCommission.cs</DependentUpon>
@@ -204,6 +243,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PastBarberSal.resx">
+      <DependentUpon>PastBarberSal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +257,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Service.resx">
       <DependentUpon>Service.cs</DependentUpon>
@@ -227,6 +270,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServicePrint.resx">
       <DependentUpon>ServicePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="setingsForm.resx">
+      <DependentUpon>SetingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransBranch.resx">
+      <DependentUpon>TransBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransbranchPermanent.resx">
+      <DependentUpon>TransbranchPermanent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBranch.resx">
+      <DependentUpon>ViewBranch.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -243,6 +298,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

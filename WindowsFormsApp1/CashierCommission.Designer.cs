@@ -54,6 +54,7 @@
             this.cashierEmpGrid.Name = "cashierEmpGrid";
             this.cashierEmpGrid.Size = new System.Drawing.Size(525, 256);
             this.cashierEmpGrid.TabIndex = 0;
+            this.cashierEmpGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashierEmpGrid_CellClick);
             // 
             // panel1
             // 
@@ -238,7 +239,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cashierEmpGrid);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CashierCommission";
             this.Text = "Cashier Commission";
             this.Load += new System.EventHandler(this.CashierCommission_Load);

@@ -44,11 +44,19 @@ namespace WindowsFormsApp1
                         comm1.ExecuteNonQuery();
                         comm2.ExecuteNonQuery();
 
-                        conn.Close();
-                        
-                    }
-                    MessageBox.Show("Payment has been successful", "Updated Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        decimal change = decimal.Parse(Change.Text.ToString()) - decimal.Parse(amtLabel.Text.ToString());
+                        Change.Text = change.ToString("#,0.00");
+            
+                        if (decimal.Parse(payamtTxt.Text.ToString()) < decimal.Parse(amtLabel.Text.ToString()))
+                        {
+                            MessageBox.Show("Cannot proceed to payment because your payment is short!");
+                            payamtTxt.Text = "0";
+                            Change.Clear();
+                        }
 
+                        MessageBox.Show("Payment has been successful, Your change is " + change, "Updated Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        conn.Close();
+                    }
                     ClientTransaction trans = new ClientTransaction();
                     trans.ref_pay = this;
                     trans.Show();
@@ -70,6 +78,8 @@ namespace WindowsFormsApp1
         {
             tIDlabel.Text = String.Concat(ServiceDetail.selected_trans_id);
             amtLabel.Text = String.Concat(ServiceDetail.selected_amt);
+            Console.Write(amtLabel.Text);
+
         }
 
         private void Payment_FormClosing(object sender, FormClosingEventArgs e)
@@ -80,6 +90,29 @@ namespace WindowsFormsApp1
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void payamtTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (payamtTxt.Text == "")
+            {
+                Change.Text = "0";
+            }
+            else
+            {
+                decimal change = decimal.Parse(payamtTxt.Text.ToString()) - decimal.Parse(amtLabel.Text.ToString());
+                Change.Text = change.ToString("#,0.00");
+            }
+        }
+
+        private void payamtTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Please enter only numbers!", "Incorrect Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                payamtTxt.Text = "0";
+            }
         }
     }
 }

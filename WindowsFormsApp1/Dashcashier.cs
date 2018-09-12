@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         public ClientTransaction ref_clienttrans { get; set; }
         public BarberCommission ref_barbercomm { get; set; }
         public ServiceCashier ref_dashcashier { get; set; }
+        public BranchSale ref_sale { get; set; }
 
         public MySqlConnection conn;
         public Dashcashier()
@@ -72,5 +73,45 @@ namespace WindowsFormsApp1
         {
            
         }
+
+        private void branchSaleBtn_Click(object sender, EventArgs e)
+        {
+            BranchSale sale = new BranchSale();
+            sale.ref_dashcashier = this;
+            sale.Show();
+            this.Hide();
+        }
+
+        private void Dashcashier_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            log.ref_dashcashier = this;
+            log.Show();
+            this.Close();
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            log.ref_dashcashier = this;
+            log.Show();
+            this.Close();
+        }
     }
+
 }

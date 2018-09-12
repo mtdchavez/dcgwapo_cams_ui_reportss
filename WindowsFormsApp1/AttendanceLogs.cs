@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void addLogs_Click(object sender, EventArgs e)
@@ -128,7 +128,7 @@ namespace WindowsFormsApp1
 
         public void fillcombo_emp()
         {
-            string empquery = "SELECT fname, lname FROM employee WHERE position IN('Barber', 'Cashier') AND status = 'Active' AND branch_id = " + GlobalVariables.User_Branch_ID + " AND id <> " + GlobalVariables.User_Emp_ID + "";
+            string empquery = "SELECT CONCAT(fname, ' ', lname) FROM employee WHERE position IN('Barber', 'Cashier') AND status = 'Active' AND branch_id = " + GlobalVariables.User_Branch_ID + " AND id <> " + GlobalVariables.User_Emp_ID + "";
             // AND branch_id = GlobalVariables.User_Branch_ID;
             MySqlCommand empcom = new MySqlCommand(empquery, conn);
             try
@@ -174,6 +174,11 @@ namespace WindowsFormsApp1
         private void AttendanceLogs_FormClosing(object sender, FormClosingEventArgs e)
         {
             ref_dashcashier.Show();
+        }
+
+        private void timeInGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,24 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp1
 {
-    public partial class BarberCommission : Form
+    public partial class PastBarberSal : Form
     {
-        public PastBarberSal ref_barberSal { get; set; }
-        public Dashcashier ref_dashcashieer { get; set; }
+        public BarberCommission ref_barbcomm { get; set; }
         public MySqlConnection conn;
-        public BarberCommission()
+        public PastBarberSal()
         {
             InitializeComponent();
             conn = new MySqlConnection("Server=localhost;Database=dcgwaps;Uid=root;Pwd=root;SslMode=none");
-        }
-
-        private void BarberCommission_Load(object sender, EventArgs e)
-        {
-            Rifreeesh();
         }
 
         public void Rifreeesh()
@@ -32,7 +26,7 @@ namespace WindowsFormsApp1
             try
             {
                 conn.Open();
-                String query = "SELECT e.fname, e.lname, CONCAT('Php ', b.tot_salary), b.sal_date FROM barber_employee b INNER JOIN employee e ON b.emp_id = e.id  WHERE e.branch_id = " + GlobalVariables.User_Branch_ID + ";";
+                String query = "SELECT e.fname, e.lname, CONCAT('Php ' + b.tot_salary) as salary, b.sal_date from barber_salary_archive b inner join employee e on b.emp_id = e.id WHERE e.branch_id = " + GlobalVariables.User_Branch_ID + ";";
                 MySqlCommand comm = new MySqlCommand(query, conn);
                 MySqlDataAdapter adp = new MySqlDataAdapter(comm);
                 DataTable dt = new DataTable();
@@ -42,7 +36,7 @@ namespace WindowsFormsApp1
                 dataGridView1.DataSource = dt;
                 dataGridView1.Columns["fname"].HeaderText = "FirstName";
                 dataGridView1.Columns["lname"].HeaderText = "LastName";
-                dataGridView1.Columns["CONCAT('Php ', b.tot_salary)"].HeaderText = "TotalSalary";
+                dataGridView1.Columns["salary"].HeaderText = "TotalSalary";
                 dataGridView1.Columns["sal_date"].HeaderText = "SalaryDate";
 
                 MySqlDataReader myReader;
@@ -62,20 +56,18 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void backBtn_Click(object sender, EventArgs e)
+        private void PastBarberSal_Load(object sender, EventArgs e)
         {
-            Dashcashier cashir = new Dashcashier();
-            cashir.ref_barbercomm = this;
-            cashir.Show();
-            this.Hide();
+            Rifreeesh();
         }
 
-        private void PastBarbSal_Click(object sender, EventArgs e)
+        private void Back_Btn_Click(object sender, EventArgs e)
         {
-            PastBarberSal past_sal = new PastBarberSal();
-            past_sal.ref_barbcomm = this;
-            past_sal.Show();
+            BarberCommission barb_comm = new BarberCommission();
+            barb_comm.ref_barberSal = this;
+            barb_comm.Show();
             this.Hide();
+
         }
     }
 }
