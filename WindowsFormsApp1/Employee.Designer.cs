@@ -30,14 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.femaleRB = new System.Windows.Forms.RadioButton();
+            this.maleRB = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.addressTxt = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cashierRB = new System.Windows.Forms.RadioButton();
             this.barberRB = new System.Windows.Forms.RadioButton();
             this.adminRB = new System.Windows.Forms.RadioButton();
-            this.password = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.username = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.birthday = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.con_num = new System.Windows.Forms.TextBox();
@@ -68,6 +69,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.empTab.SuspendLayout();
@@ -77,19 +80,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cashier)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.cashierRB);
-            this.panel1.Controls.Add(this.barberRB);
-            this.panel1.Controls.Add(this.adminRB);
-            this.panel1.Controls.Add(this.password);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.username);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.addressTxt);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.birthday);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.con_num);
@@ -107,12 +110,71 @@
             this.panel1.Size = new System.Drawing.Size(912, 206);
             this.panel1.TabIndex = 53;
             // 
+            // femaleRB
+            // 
+            this.femaleRB.AutoSize = true;
+            this.femaleRB.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.femaleRB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.femaleRB.Location = new System.Drawing.Point(110, 6);
+            this.femaleRB.Name = "femaleRB";
+            this.femaleRB.Size = new System.Drawing.Size(61, 17);
+            this.femaleRB.TabIndex = 77;
+            this.femaleRB.TabStop = true;
+            this.femaleRB.Text = "Female";
+            this.femaleRB.UseVisualStyleBackColor = true;
+            this.femaleRB.CheckedChanged += new System.EventHandler(this.femaleRB_CheckedChanged);
+            // 
+            // maleRB
+            // 
+            this.maleRB.AutoSize = true;
+            this.maleRB.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maleRB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.maleRB.Location = new System.Drawing.Point(16, 6);
+            this.maleRB.Name = "maleRB";
+            this.maleRB.Size = new System.Drawing.Size(49, 17);
+            this.maleRB.TabIndex = 76;
+            this.maleRB.TabStop = true;
+            this.maleRB.Text = "Male";
+            this.maleRB.UseVisualStyleBackColor = true;
+            this.maleRB.CheckedChanged += new System.EventHandler(this.maleRB_CheckedChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(457, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 27);
+            this.label7.TabIndex = 75;
+            this.label7.Text = "Gender";
+            // 
+            // addressTxt
+            // 
+            this.addressTxt.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressTxt.Location = new System.Drawing.Point(153, 162);
+            this.addressTxt.Multiline = true;
+            this.addressTxt.Name = "addressTxt";
+            this.addressTxt.Size = new System.Drawing.Size(375, 28);
+            this.addressTxt.TabIndex = 74;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label13.Location = new System.Drawing.Point(17, 159);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(93, 27);
+            this.label13.TabIndex = 73;
+            this.label13.Text = "Address";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(457, 89);
+            this.label9.Location = new System.Drawing.Point(459, 123);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 27);
             this.label9.TabIndex = 72;
@@ -123,7 +185,7 @@
             this.cashierRB.AutoSize = true;
             this.cashierRB.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierRB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cashierRB.Location = new System.Drawing.Point(785, 98);
+            this.cashierRB.Location = new System.Drawing.Point(145, 6);
             this.cashierRB.Name = "cashierRB";
             this.cashierRB.Size = new System.Drawing.Size(64, 17);
             this.cashierRB.TabIndex = 71;
@@ -137,7 +199,7 @@
             this.barberRB.AutoSize = true;
             this.barberRB.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barberRB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.barberRB.Location = new System.Drawing.Point(707, 98);
+            this.barberRB.Location = new System.Drawing.Point(74, 6);
             this.barberRB.Name = "barberRB";
             this.barberRB.Size = new System.Drawing.Size(60, 17);
             this.barberRB.TabIndex = 70;
@@ -151,7 +213,7 @@
             this.adminRB.AutoSize = true;
             this.adminRB.Font = new System.Drawing.Font("Bahnschrift", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminRB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.adminRB.Location = new System.Drawing.Point(628, 98);
+            this.adminRB.Location = new System.Drawing.Point(6, 6);
             this.adminRB.Name = "adminRB";
             this.adminRB.Size = new System.Drawing.Size(56, 17);
             this.adminRB.TabIndex = 69;
@@ -160,53 +222,17 @@
             this.adminRB.UseVisualStyleBackColor = true;
             this.adminRB.CheckedChanged += new System.EventHandler(this.adminRB_CheckedChanged);
             // 
-            // password
-            // 
-            this.password.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(626, 162);
-            this.password.Multiline = true;
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(217, 28);
-            this.password.TabIndex = 68;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(457, 161);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 27);
-            this.label8.TabIndex = 67;
-            this.label8.Text = "Password";
-            // 
-            // username
-            // 
-            this.username.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(626, 125);
-            this.username.Multiline = true;
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(217, 28);
-            this.username.TabIndex = 66;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(457, 125);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 27);
-            this.label7.TabIndex = 65;
-            this.label7.Text = "Username";
-            // 
             // birthday
             // 
+            this.birthday.CustomFormat = "yyyy-MM-dd";
             this.birthday.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.birthday.Location = new System.Drawing.Point(626, 58);
+            this.birthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.birthday.Location = new System.Drawing.Point(627, 58);
+            this.birthday.MaxDate = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
             this.birthday.Name = "birthday";
             this.birthday.Size = new System.Drawing.Size(217, 24);
             this.birthday.TabIndex = 64;
+            this.birthday.Value = new System.DateTime(1999, 12, 31, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -411,6 +437,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(904, 257);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // tabPage2
             // 
@@ -537,6 +564,25 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.maleRB);
+            this.panel3.Controls.Add(this.femaleRB);
+            this.panel3.Location = new System.Drawing.Point(626, 89);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(217, 27);
+            this.panel3.TabIndex = 78;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.adminRB);
+            this.panel4.Controls.Add(this.barberRB);
+            this.panel4.Controls.Add(this.cashierRB);
+            this.panel4.Location = new System.Drawing.Point(627, 120);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(217, 22);
+            this.panel4.TabIndex = 79;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,6 +617,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cashier)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,10 +641,6 @@
         private System.Windows.Forms.RadioButton cashierRB;
         private System.Windows.Forms.RadioButton barberRB;
         private System.Windows.Forms.RadioButton adminRB;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox username;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker birthday;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox con_num;
@@ -616,5 +662,12 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox addressTxt;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.RadioButton femaleRB;
+        private System.Windows.Forms.RadioButton maleRB;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }

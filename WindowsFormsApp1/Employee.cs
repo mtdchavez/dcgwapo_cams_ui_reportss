@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         public MySqlConnection conn;
 
         String position;
+        String gender;
         public Employee()
         {
             InitializeComponent();
@@ -118,6 +119,7 @@ namespace WindowsFormsApp1
             Rifreeesh();
             RifreeeshBarber();
             RifreeeshCashier();
+            fillcombo_branch();
         }
         public void loadBranch()
         {
@@ -172,58 +174,24 @@ namespace WindowsFormsApp1
         {
             this.Close();
         }
-        public static int selected_branch_id;
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            String fn, mn, ln, conNo, bday, uname, status;
-            selected_branch_id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
-            branchCombo.Text = dataGridView1.Rows[e.RowIndex].Cells["name"].Value.ToString();
-            fn = dataGridView1.Rows[e.RowIndex].Cells["fname"].Value.ToString();
-            mn = dataGridView1.Rows[e.RowIndex].Cells["mname"].Value.ToString();
-            ln = dataGridView1.Rows[e.RowIndex].Cells["lname"].Value.ToString();
-            conNo = dataGridView1.Rows[e.RowIndex].Cells["contact_number"].Value.ToString();
-            bday = dataGridView1.Rows[e.RowIndex].Cells["birthday"].Value.ToString();
-            uname = dataGridView1.Rows[e.RowIndex].Cells["username"].Value.ToString();
-            status = dataGridView1.Rows[e.RowIndex].Cells["status"].Value.ToString();
-            if (dataGridView1.Rows[e.RowIndex].Cells["position"].Value.ToString() == "Admin")
-            {
-                adminRB.Checked = true;
-            }
-            else if (dataGridView1.Rows[e.RowIndex].Cells["position"].Value.ToString() == "Barber")
-            {
-                barberRB.Checked = true;
-            }
-            else if (dataGridView1.Rows[e.RowIndex].Cells["position"].Value.ToString() == "Cashier")
-            {
-                cashierRB.Checked = true;
-            }
-
-            fname.Text = fn;
-            mname.Text = mn;
-            lname.Text = ln;
-            con_num.Text = conNo;
-            birthday.Text = bday;
-            username.Text = uname;
-        }
-
+        
         private void addEmp_Click(object sender, EventArgs e)
         {
             conn.Close();
             adminRB.Enabled = true;
             barberRB.Enabled = true;
             cashierRB.Enabled = true;
-            int branchidInt;
+            int branchidInt = branchCombo.SelectedIndex;
 
             //serviceCombo
             conn.Open();
 
             MySqlCommand getBranchID = new MySqlCommand("SELECT ID FROM branch WHERE NAME LIKE'%" + branchCombo.Text + "%')", conn);
-            branchidInt = Convert.ToInt32(getBranchID.ExecuteScalar());
+           // branchidInt = Convert.ToInt32(getBranchID.ExecuteScalar());
 
             try
             {
-                conn.Open();
-                if (fname.Text == String.Empty || mname.Text == String.Empty || lname.Text == String.Empty || con_num.Text == String.Empty || username.Text == String.Empty || password.Text == String.Empty)
+                if (fname.Text == String.Empty || mname.Text == String.Empty || lname.Text == String.Empty || con_num.Text == String.Empty || addressTxt.Text == String.Empty)
                 {
                     MessageBox.Show("Please input required field.");
                 }
@@ -258,13 +226,13 @@ namespace WindowsFormsApp1
                         {
                             conn.Open();
 
-                            String query = "INSERT INTO employee (branch_id, fname, mname, lname, address, contact_number, gender, birthday, position, username, password, status) VALUES (" + branchidInt + ", '" + fname.Text + "', '" + mname.Text + "', '" + lname.Text + "', ' ' , '" + con_num.Text + "', '" + "" + "', '" + this.birthday.Text + "', '" + position + "',  '" + username.Text + "', '" + password.Text + "', 'Active') ";
+                            String query = "call addEmp("+ branchidInt + ", "+ branchidInt + ", '"+ fname.Text + "', '" + mname.Text + "', '" + lname.Text + "', '" + addressTxt.Text + "', '" + con_num.Text + "', '" + gender + "', '" + this.birthday.Text + "', '" + position + "')";
                             MySqlCommand comm = new MySqlCommand(query, conn);
                             comm.ExecuteNonQuery();
 
                             conn.Close();
                         }
-                        MessageBox.Show("Branch data has been added successfully", "Updated Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Employee has been added successfully", "Updated Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Rifreeesh();
                     }
                 }
@@ -305,6 +273,57 @@ namespace WindowsFormsApp1
         private void cashierRB_CheckedChanged(object sender, EventArgs e)
         {
             position = "Cashier";
+        }
+        public static int selected_branch_id;
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String fn, mn, ln, conNo, bday, status;
+            selected_branch_id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
+            branchCombo.Text = dataGridView1.Rows[e.RowIndex].Cells["name"].Value.ToString();
+            fn = dataGridView1.Rows[e.RowIndex].Cells["fname"].Value.ToString();
+            mn = dataGridView1.Rows[e.RowIndex].Cells["mname"].Value.ToString();
+            ln = dataGridView1.Rows[e.RowIndex].Cells["lname"].Value.ToString();
+            conNo = dataGridView1.Rows[e.RowIndex].Cells["contact_number"].Value.ToString();
+            bday = dataGridView1.Rows[e.RowIndex].Cells["birthday"].Value.ToString();
+           // uname = dataGridView1.Rows[e.RowIndex].Cells["username"].Value.ToString();
+            status = dataGridView1.Rows[e.RowIndex].Cells["status"].Value.ToString();
+            if (dataGridView1.Rows[e.RowIndex].Cells["gender"].Value.ToString() == "Male")
+            {
+                maleRB.Checked = true;
+            }
+            else if (dataGridView1.Rows[e.RowIndex].Cells["gender"].Value.ToString() == "Female")
+            {
+                femaleRB.Checked = true;
+            }
+            if (dataGridView1.Rows[e.RowIndex].Cells["position"].Value.ToString() == "Admin")
+            {
+                adminRB.Checked = true;
+            }
+            else if (dataGridView1.Rows[e.RowIndex].Cells["position"].Value.ToString() == "Barber")
+            {
+                barberRB.Checked = true;
+            }
+            else if (dataGridView1.Rows[e.RowIndex].Cells["position"].Value.ToString() == "Cashier")
+            {
+                cashierRB.Checked = true;
+            }
+
+            fname.Text = fn;
+            mname.Text = mn;
+            lname.Text = ln;
+            con_num.Text = conNo;
+            birthday.Text = bday;
+            
+        }
+
+        private void maleRB_CheckedChanged(object sender, EventArgs e)
+        {
+            gender = "Male";
+        }
+
+        private void femaleRB_CheckedChanged(object sender, EventArgs e)
+        {
+            gender = "Female";
         }
     }
 }

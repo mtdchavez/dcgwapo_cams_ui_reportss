@@ -93,8 +93,6 @@
             this.servicesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.servicesGrid.Size = new System.Drawing.Size(455, 171);
             this.servicesGrid.TabIndex = 25;
-            this.servicesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.servicesGrid_CellClick);
-            this.servicesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.servicesGrid_CellContentClick);
             // 
             // panel1
             // 
