@@ -200,5 +200,13 @@ namespace WindowsFormsApp1
                 conn.Close();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReceiptPrint br = new ReceiptPrint();
+            br.ref_dashadmin = this;
+            br.Show();
+            this.Hide();
+        }
     }
 }
