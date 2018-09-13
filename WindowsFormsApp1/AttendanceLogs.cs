@@ -129,8 +129,8 @@ namespace WindowsFormsApp1
 
         public void fillcombo_emp()
         {
-            //string expiry_date = expiredDTP.Value.ToString("yyyy-MM-dd");
-            string empquery = "SELECT CONCAT(fname, ' ', lname) FROM employee WHERE position IN('Barber', 'Cashier') AND status = 'Active' AND branch_id = " + GlobalVariables.User_Branch_ID + " AND id <> " + GlobalVariables.User_Emp_ID + "";
+            string expiry_date = DateTime.Today.ToString("yyyy-MM--dd");
+            string empquery = "SELECT CONCAT(fname, ' ', lname) FROM employee,EMPLOYEE_TRANSFER WHERE position IN('Barber', 'Cashier') AND status = 'Active' AND employee.branch_id = " + GlobalVariables.User_Branch_ID + " AND employee.id <> " + GlobalVariables.User_Emp_ID + " and DATE_TO < '" + expiry_date + "' and emp_id = employee.id";
             // AND branch_id = GlobalVariables.User_Branch_ID;
             MySqlCommand empcom = new MySqlCommand(empquery, conn);
             try

@@ -71,7 +71,6 @@ namespace WindowsFormsApp1
         private void TransBranch_Load(object sender, EventArgs e)
         {
             combo_branch();
-            //checkTransfer();
         }
 
         private void Cancel_Click(object sender, EventArgs e)

@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
 
                 dataGridView1.DataSource = dt;
                 dataGridView1.Columns["id"].Visible = false;
+                dataGridView1.Columns["home_branch_id"].Visible = false;
                 dataGridView1.Columns["name"].HeaderText = "Branch";
                 dataGridView1.Columns["fname"].HeaderText = "First Name";
                 dataGridView1.Columns["mname"].HeaderText = "Middle Name";
@@ -186,8 +187,8 @@ namespace WindowsFormsApp1
             //serviceCombo
             conn.Open();
 
-            MySqlCommand getBranchID = new MySqlCommand("SELECT ID FROM branch WHERE NAME LIKE'%" + branchCombo.Text + "%')", conn);
-           // branchidInt = Convert.ToInt32(getBranchID.ExecuteScalar());
+            MySqlCommand getBranchID = new MySqlCommand("SELECT ID FROM branch WHERE NAME LIKE'%" + branchCombo.Text + "%'", conn);
+            branchidInt = Convert.ToInt32(getBranchID.ExecuteScalar());
 
             try
             {
@@ -226,7 +227,7 @@ namespace WindowsFormsApp1
                         {
                             conn.Open();
 
-                            String query = "call addEmp("+ branchidInt + ", "+ branchidInt + ", '"+ fname.Text + "', '" + mname.Text + "', '" + lname.Text + "', '" + addressTxt.Text + "', '" + con_num.Text + "', '" + gender + "', '" + this.birthday.Text + "', '" + position + "')";
+                            String query = "call addEmp('"+ branchidInt + "', '', '"+ fname.Text + "', '" + mname.Text + "', '" + lname.Text + "', '" + addressTxt.Text + "', '" + con_num.Text + "', '" + gender + "', '" + this.birthday.Text + "', '" + position + "')";
                             MySqlCommand comm = new MySqlCommand(query, conn);
                             comm.ExecuteNonQuery();
 
@@ -275,10 +276,12 @@ namespace WindowsFormsApp1
             position = "Cashier";
         }
         public static int selected_branch_id;
+        public static int selected_homeb_id;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             String fn, mn, ln, conNo, bday, status;
             selected_branch_id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString());
+            selected_homeb_id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["home_branch_id"].Value.ToString());
             branchCombo.Text = dataGridView1.Rows[e.RowIndex].Cells["name"].Value.ToString();
             fn = dataGridView1.Rows[e.RowIndex].Cells["fname"].Value.ToString();
             mn = dataGridView1.Rows[e.RowIndex].Cells["mname"].Value.ToString();
@@ -287,14 +290,14 @@ namespace WindowsFormsApp1
             bday = dataGridView1.Rows[e.RowIndex].Cells["birthday"].Value.ToString();
            // uname = dataGridView1.Rows[e.RowIndex].Cells["username"].Value.ToString();
             status = dataGridView1.Rows[e.RowIndex].Cells["status"].Value.ToString();
-            if (dataGridView1.Rows[e.RowIndex].Cells["gender"].Value.ToString() == "Male")
+           /* if (dataGridView1.Rows[e.RowIndex].Cells["gender"].Value.ToString() == "Male")
             {
                 maleRB.Checked = true;
             }
             else if (dataGridView1.Rows[e.RowIndex].Cells["gender"].Value.ToString() == "Female")
             {
                 femaleRB.Checked = true;
-            }
+            }*/
             if (dataGridView1.Rows[e.RowIndex].Cells["position"].Value.ToString() == "Admin")
             {
                 adminRB.Checked = true;
