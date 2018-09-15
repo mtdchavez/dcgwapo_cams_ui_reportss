@@ -41,6 +41,8 @@ namespace WindowsFormsApp1
                 dataGridView1.Columns["price"].HeaderText = "Price";
                 dataGridView1.Columns["status"].HeaderText = "Status";
 
+                activeBtn.Enabled = false;
+                inactBtn.Enabled = false;
             }
             catch (Exception ee)
             {
