@@ -47,6 +47,9 @@ namespace WindowsFormsApp1
                 dataGridView1.Columns["price"].HeaderText = "Price";
                 dataGridView1.Columns["status"].HeaderText = "Status";
 
+                activeBtn.Enabled = false;
+                inactBtn.Enabled = false;
+
 
             }
             catch (Exception ee)
@@ -61,7 +64,7 @@ namespace WindowsFormsApp1
             try
             {
                 conn.Open();
-                String query = "UPDATE service SET status = '" + x + "' WHERE id = '" + serIDlab.Text + "'";
+                String query = "UPDATE service SET status = '" + x + "' WHERE id = '" + int.Parse(serIDlab.Text) + "'";
                 MySqlCommand comm = new MySqlCommand(query, conn);
                 comm.ExecuteNonQuery();
                 conn.Close();
@@ -113,6 +116,25 @@ namespace WindowsFormsApp1
             cashiir.ref_dashcashier = this;
             cashiir.Show();
             this.Close();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String ser_id = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
+            String status = dataGridView1.Rows[e.RowIndex].Cells["status"].Value.ToString();
+            
+            serIDlab.Text = ser_id;
+            
+            if (status == "Active")
+            {
+                activeBtn.Enabled = false;
+                inactBtn.Enabled = true;
+            }
+            else
+            {
+                activeBtn.Enabled = true;
+                inactBtn.Enabled = false;
+            }
         }
     }
 }

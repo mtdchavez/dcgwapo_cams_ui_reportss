@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
     public partial class CashierCommission : Form
     {
         public Dashadmin ref_dashadmin { get; set; }
+        public CashierUtang ref_utang { get; set; }
         public MySqlConnection conn;
         public CashierCommission()
         {
@@ -126,6 +127,14 @@ namespace WindowsFormsApp1
             {
                 empID = int.Parse(cashierEmpGrid.Rows[e.RowIndex].Cells["id"].Value.ToString());
             }
+        }
+
+        private void cashadvBtn_Click(object sender, EventArgs e)
+        {
+            CashierUtang utang = new CashierUtang();
+            utang.ref_cashiercomm = this;
+            utang.Show();
+            this.Hide();
         }
     }
 }

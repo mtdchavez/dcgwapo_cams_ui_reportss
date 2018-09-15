@@ -114,7 +114,6 @@
             this.serIDlab.Size = new System.Drawing.Size(23, 25);
             this.serIDlab.TabIndex = 72;
             this.serIDlab.Text = "0";
-            this.serIDlab.Visible = false;
             // 
             // dataGridView1
             // 
@@ -133,6 +132,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(561, 279);
             this.dataGridView1.TabIndex = 71;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // ServiceCashier
             // 
