@@ -35,7 +35,10 @@
             this.backBtn = new System.Windows.Forms.Button();
             this.serIDlab = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // inactBtn
@@ -45,7 +48,7 @@
             this.inactBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.inactBtn.Font = new System.Drawing.Font("Bahnschrift SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inactBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.inactBtn.Location = new System.Drawing.Point(304, 478);
+            this.inactBtn.Location = new System.Drawing.Point(302, 530);
             this.inactBtn.Margin = new System.Windows.Forms.Padding(4);
             this.inactBtn.Name = "inactBtn";
             this.inactBtn.Size = new System.Drawing.Size(163, 73);
@@ -61,7 +64,7 @@
             this.activeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.activeBtn.Font = new System.Drawing.Font("Bahnschrift SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.activeBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.activeBtn.Location = new System.Drawing.Point(133, 478);
+            this.activeBtn.Location = new System.Drawing.Point(131, 530);
             this.activeBtn.Margin = new System.Windows.Forms.Padding(4);
             this.activeBtn.Name = "activeBtn";
             this.activeBtn.Size = new System.Drawing.Size(163, 73);
@@ -76,7 +79,7 @@
             this.backlabel.BackColor = System.Drawing.Color.Transparent;
             this.backlabel.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backlabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.backlabel.Location = new System.Drawing.Point(59, 114);
+            this.backlabel.Location = new System.Drawing.Point(57, 169);
             this.backlabel.Name = "backlabel";
             this.backlabel.Size = new System.Drawing.Size(39, 18);
             this.backlabel.TabIndex = 74;
@@ -92,7 +95,7 @@
             this.backBtn.Font = new System.Drawing.Font("Bahnschrift SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.backBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.backBtn.Location = new System.Drawing.Point(24, 25);
+            this.backBtn.Location = new System.Drawing.Point(22, 77);
             this.backBtn.Margin = new System.Windows.Forms.Padding(4);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(107, 89);
@@ -108,12 +111,13 @@
             this.serIDlab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.serIDlab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serIDlab.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.serIDlab.Location = new System.Drawing.Point(291, 444);
+            this.serIDlab.Location = new System.Drawing.Point(289, 496);
             this.serIDlab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.serIDlab.Name = "serIDlab";
             this.serIDlab.Size = new System.Drawing.Size(23, 25);
             this.serIDlab.TabIndex = 72;
             this.serIDlab.Text = "0";
+            this.serIDlab.Visible = false;
             // 
             // dataGridView1
             // 
@@ -124,7 +128,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 153);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 205);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -134,13 +138,36 @@
             this.dataGridView1.TabIndex = 71;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(607, 54);
+            this.panel2.TabIndex = 89;
+            // 
+            // label4
+            // 
+            this.label4.AllowDrop = true;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(13, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(180, 29);
+            this.label4.TabIndex = 84;
+            this.label4.Text = "Service Cashier";
+            // 
             // ServiceCashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(609, 596);
+            this.ClientSize = new System.Drawing.Size(609, 618);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.inactBtn);
             this.Controls.Add(this.activeBtn);
             this.Controls.Add(this.backlabel);
@@ -153,6 +180,8 @@
             this.Text = "ServiceCashier";
             this.Load += new System.EventHandler(this.ServiceCashier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +195,7 @@
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Label serIDlab;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
     }
 }

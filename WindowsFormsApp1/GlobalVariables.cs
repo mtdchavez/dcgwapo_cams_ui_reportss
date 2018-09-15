@@ -12,5 +12,7 @@ namespace WindowsFormsApp1
         public static int User_Emp_ID { get; set; }
         public static String User_Fname { get; set; }
         public static String User_Lname { get; set; }
+        public static double pct_barber { get; set; }
+        public static double pct_sale { get; set; }
     }
 }

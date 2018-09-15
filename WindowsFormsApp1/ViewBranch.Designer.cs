@@ -38,7 +38,10 @@
             this.branchCmb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.viewBranchDGV = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.viewBranchDGV)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // backlabel
@@ -47,10 +50,9 @@
             this.backlabel.BackColor = System.Drawing.Color.Transparent;
             this.backlabel.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backlabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.backlabel.Location = new System.Drawing.Point(32, 68);
-            this.backlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.backlabel.Location = new System.Drawing.Point(46, 150);
             this.backlabel.Name = "backlabel";
-            this.backlabel.Size = new System.Drawing.Size(32, 14);
+            this.backlabel.Size = new System.Drawing.Size(39, 18);
             this.backlabel.TabIndex = 74;
             this.backlabel.Text = "back";
             // 
@@ -65,9 +67,10 @@
             this.backBtn.Font = new System.Drawing.Font("Bahnschrift SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.backBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.backBtn.Location = new System.Drawing.Point(10, 11);
+            this.backBtn.Location = new System.Drawing.Point(16, 73);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(71, 56);
+            this.backBtn.Size = new System.Drawing.Size(95, 69);
             this.backBtn.TabIndex = 73;
             this.backBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.backBtn.UseVisualStyleBackColor = false;
@@ -76,9 +79,10 @@
             // locationTxt
             // 
             this.locationTxt.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locationTxt.Location = new System.Drawing.Point(194, 102);
+            this.locationTxt.Location = new System.Drawing.Point(262, 185);
+            this.locationTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.locationTxt.Name = "locationTxt";
-            this.locationTxt.Size = new System.Drawing.Size(183, 30);
+            this.locationTxt.Size = new System.Drawing.Size(243, 35);
             this.locationTxt.TabIndex = 81;
             // 
             // label3
@@ -87,18 +91,20 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(98, 102);
+            this.label3.Location = new System.Drawing.Point(134, 185);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 27);
+            this.label3.Size = new System.Drawing.Size(122, 34);
             this.label3.TabIndex = 80;
             this.label3.Text = "Location";
             // 
             // cityTxt
             // 
             this.cityTxt.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityTxt.Location = new System.Drawing.Point(194, 59);
+            this.cityTxt.Location = new System.Drawing.Point(262, 132);
+            this.cityTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cityTxt.Name = "cityTxt";
-            this.cityTxt.Size = new System.Drawing.Size(183, 30);
+            this.cityTxt.Size = new System.Drawing.Size(243, 35);
             this.cityTxt.TabIndex = 79;
             // 
             // label1
@@ -107,9 +113,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(98, 60);
+            this.label1.Location = new System.Drawing.Point(134, 133);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 27);
+            this.label1.Size = new System.Drawing.Size(62, 34);
             this.label1.TabIndex = 78;
             this.label1.Text = "City";
             // 
@@ -117,9 +124,10 @@
             // 
             this.branchCmb.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branchCmb.FormattingEnabled = true;
-            this.branchCmb.Location = new System.Drawing.Point(194, 16);
+            this.branchCmb.Location = new System.Drawing.Point(262, 79);
+            this.branchCmb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.branchCmb.Name = "branchCmb";
-            this.branchCmb.Size = new System.Drawing.Size(183, 30);
+            this.branchCmb.Size = new System.Drawing.Size(243, 36);
             this.branchCmb.TabIndex = 77;
             // 
             // label2
@@ -128,9 +136,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(98, 17);
+            this.label2.Location = new System.Drawing.Point(134, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 27);
+            this.label2.Size = new System.Drawing.Size(106, 34);
             this.label2.TabIndex = 76;
             this.label2.Text = "Branch";
             // 
@@ -139,24 +148,49 @@
             this.viewBranchDGV.AllowUserToAddRows = false;
             this.viewBranchDGV.AllowUserToDeleteRows = false;
             this.viewBranchDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.viewBranchDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.viewBranchDGV.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.viewBranchDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewBranchDGV.Location = new System.Drawing.Point(22, 151);
+            this.viewBranchDGV.Location = new System.Drawing.Point(32, 245);
+            this.viewBranchDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.viewBranchDGV.Name = "viewBranchDGV";
             this.viewBranchDGV.ReadOnly = true;
             this.viewBranchDGV.RowHeadersVisible = false;
             this.viewBranchDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.viewBranchDGV.Size = new System.Drawing.Size(488, 278);
+            this.viewBranchDGV.Size = new System.Drawing.Size(651, 342);
             this.viewBranchDGV.TabIndex = 75;
             this.viewBranchDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewBranchDGV_CellContentClick);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(715, 54);
+            this.panel2.TabIndex = 89;
+            // 
+            // label4
+            // 
+            this.label4.AllowDrop = true;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(13, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 29);
+            this.label4.TabIndex = 84;
+            this.label4.Text = "View Branch";
+            // 
             // ViewBranch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(536, 451);
+            this.ClientSize = new System.Drawing.Size(715, 601);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.locationTxt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cityTxt);
@@ -167,11 +201,13 @@
             this.Controls.Add(this.backlabel);
             this.Controls.Add(this.backBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ViewBranch";
             this.Text = "ViewBranch";
             this.Load += new System.EventHandler(this.ViewBranch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewBranchDGV)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +224,7 @@
         private System.Windows.Forms.ComboBox branchCmb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView viewBranchDGV;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
     }
 }

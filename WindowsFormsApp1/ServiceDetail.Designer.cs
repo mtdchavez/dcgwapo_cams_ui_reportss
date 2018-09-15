@@ -51,9 +51,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.servicesGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -62,9 +65,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 120);
+            this.label2.Location = new System.Drawing.Point(30, 204);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 27);
+            this.label2.Size = new System.Drawing.Size(203, 34);
             this.label2.TabIndex = 24;
             this.label2.Text = "Transaction ID :";
             // 
@@ -74,9 +78,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 154);
+            this.label1.Location = new System.Drawing.Point(30, 246);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 27);
+            this.label1.Size = new System.Drawing.Size(0, 34);
             this.label1.TabIndex = 24;
             // 
             // servicesGrid
@@ -86,12 +91,13 @@
             this.servicesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.servicesGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.servicesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.servicesGrid.Location = new System.Drawing.Point(10, 213);
+            this.servicesGrid.Location = new System.Drawing.Point(15, 318);
+            this.servicesGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.servicesGrid.Name = "servicesGrid";
             this.servicesGrid.ReadOnly = true;
             this.servicesGrid.RowHeadersVisible = false;
             this.servicesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.servicesGrid.Size = new System.Drawing.Size(455, 171);
+            this.servicesGrid.Size = new System.Drawing.Size(607, 210);
             this.servicesGrid.TabIndex = 25;
             // 
             // panel1
@@ -103,27 +109,30 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.addOrd);
-            this.panel1.Location = new System.Drawing.Point(10, 395);
+            this.panel1.Location = new System.Drawing.Point(15, 542);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 92);
+            this.panel1.Size = new System.Drawing.Size(607, 113);
             this.panel1.TabIndex = 26;
             // 
             // serviceCombo
             // 
             this.serviceCombo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serviceCombo.FormattingEnabled = true;
-            this.serviceCombo.Location = new System.Drawing.Point(104, 45);
+            this.serviceCombo.Location = new System.Drawing.Point(139, 55);
+            this.serviceCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.serviceCombo.Name = "serviceCombo";
-            this.serviceCombo.Size = new System.Drawing.Size(223, 27);
+            this.serviceCombo.Size = new System.Drawing.Size(296, 32);
             this.serviceCombo.TabIndex = 55;
             // 
             // barberCombo
             // 
             this.barberCombo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barberCombo.FormattingEnabled = true;
-            this.barberCombo.Location = new System.Drawing.Point(104, 10);
+            this.barberCombo.Location = new System.Drawing.Point(139, 12);
+            this.barberCombo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.barberCombo.Name = "barberCombo";
-            this.barberCombo.Size = new System.Drawing.Size(223, 27);
+            this.barberCombo.Size = new System.Drawing.Size(296, 32);
             this.barberCombo.TabIndex = 55;
             // 
             // label8
@@ -132,10 +141,9 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(378, 71);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(504, 91);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(27, 14);
+            this.label8.Size = new System.Drawing.Size(34, 18);
             this.label8.TabIndex = 66;
             this.label8.Text = "Add";
             // 
@@ -144,9 +152,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(19, 41);
+            this.label4.Location = new System.Drawing.Point(25, 50);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 27);
+            this.label4.Size = new System.Drawing.Size(109, 34);
             this.label4.TabIndex = 24;
             this.label4.Text = "Service";
             // 
@@ -155,9 +164,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(19, 6);
+            this.label3.Location = new System.Drawing.Point(25, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 27);
+            this.label3.Size = new System.Drawing.Size(102, 34);
             this.label3.TabIndex = 24;
             this.label3.Text = "Barber";
             // 
@@ -168,9 +178,10 @@
             this.addOrd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.addOrd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addOrd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.addOrd.Location = new System.Drawing.Point(344, 10);
+            this.addOrd.Location = new System.Drawing.Point(459, 8);
+            this.addOrd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addOrd.Name = "addOrd";
-            this.addOrd.Size = new System.Drawing.Size(97, 67);
+            this.addOrd.Size = new System.Drawing.Size(129, 82);
             this.addOrd.TabIndex = 54;
             this.addOrd.UseVisualStyleBackColor = false;
             this.addOrd.Click += new System.EventHandler(this.addOrd_Click);
@@ -181,9 +192,10 @@
             this.tIDlabel.BackColor = System.Drawing.Color.Transparent;
             this.tIDlabel.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tIDlabel.ForeColor = System.Drawing.Color.White;
-            this.tIDlabel.Location = new System.Drawing.Point(179, 120);
+            this.tIDlabel.Location = new System.Drawing.Point(241, 204);
+            this.tIDlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tIDlabel.Name = "tIDlabel";
-            this.tIDlabel.Size = new System.Drawing.Size(24, 27);
+            this.tIDlabel.Size = new System.Drawing.Size(30, 34);
             this.tIDlabel.TabIndex = 24;
             this.tIDlabel.Text = "0";
             // 
@@ -194,9 +206,10 @@
             this.payBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.payBtn.Location = new System.Drawing.Point(337, 17);
+            this.payBtn.Location = new System.Drawing.Point(449, 12);
+            this.payBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.payBtn.Name = "payBtn";
-            this.payBtn.Size = new System.Drawing.Size(95, 66);
+            this.payBtn.Size = new System.Drawing.Size(127, 81);
             this.payBtn.TabIndex = 54;
             this.payBtn.UseVisualStyleBackColor = false;
             this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
@@ -207,9 +220,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(7, 66);
+            this.label5.Location = new System.Drawing.Point(9, 81);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 27);
+            this.label5.Size = new System.Drawing.Size(187, 34);
             this.label5.TabIndex = 55;
             this.label5.Text = "Total Amount :";
             // 
@@ -219,9 +233,10 @@
             this.amtLabel.BackColor = System.Drawing.Color.Transparent;
             this.amtLabel.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amtLabel.ForeColor = System.Drawing.Color.White;
-            this.amtLabel.Location = new System.Drawing.Point(153, 66);
+            this.amtLabel.Location = new System.Drawing.Point(204, 81);
+            this.amtLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.amtLabel.Name = "amtLabel";
-            this.amtLabel.Size = new System.Drawing.Size(24, 27);
+            this.amtLabel.Size = new System.Drawing.Size(30, 34);
             this.amtLabel.TabIndex = 56;
             this.amtLabel.Text = "0";
             // 
@@ -231,10 +246,9 @@
             this.backlabel.BackColor = System.Drawing.Color.Transparent;
             this.backlabel.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backlabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.backlabel.Location = new System.Drawing.Point(40, 84);
-            this.backlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.backlabel.Location = new System.Drawing.Point(55, 162);
             this.backlabel.Name = "backlabel";
-            this.backlabel.Size = new System.Drawing.Size(32, 14);
+            this.backlabel.Size = new System.Drawing.Size(39, 18);
             this.backlabel.TabIndex = 64;
             this.backlabel.Text = "back";
             // 
@@ -248,9 +262,10 @@
             this.backBtn.Font = new System.Drawing.Font("Bahnschrift SemiBold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.backBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.backBtn.Location = new System.Drawing.Point(14, 11);
+            this.backBtn.Location = new System.Drawing.Point(21, 70);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(80, 72);
+            this.backBtn.Size = new System.Drawing.Size(107, 89);
             this.backBtn.TabIndex = 63;
             this.backBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.backBtn.UseVisualStyleBackColor = false;
@@ -262,10 +277,9 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(371, 79);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(495, 98);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 14);
+            this.label7.Size = new System.Drawing.Size(32, 18);
             this.label7.TabIndex = 65;
             this.label7.Text = "Pay";
             // 
@@ -278,11 +292,11 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.amtLabel);
             this.panel2.Controls.Add(this.payBtn);
-            this.panel2.Location = new System.Drawing.Point(14, 110);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(21, 191);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(449, 98);
-            this.panel2.TabIndex = 67;            
+            this.panel2.Size = new System.Drawing.Size(599, 121);
+            this.panel2.TabIndex = 67;
             // 
             // statusLabel
             // 
@@ -290,9 +304,10 @@
             this.statusLabel.BackColor = System.Drawing.Color.Transparent;
             this.statusLabel.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusLabel.ForeColor = System.Drawing.Color.White;
-            this.statusLabel.Location = new System.Drawing.Point(97, 38);
+            this.statusLabel.Location = new System.Drawing.Point(129, 47);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(24, 27);
+            this.statusLabel.Size = new System.Drawing.Size(30, 34);
             this.statusLabel.TabIndex = 70;
             this.statusLabel.Text = "0";
             // 
@@ -302,9 +317,10 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(7, 38);
+            this.label6.Location = new System.Drawing.Point(9, 47);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 27);
+            this.label6.Size = new System.Drawing.Size(107, 34);
             this.label6.TabIndex = 55;
             this.label6.Text = "Status :";
             // 
@@ -314,10 +330,9 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(401, 86);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(537, 162);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 14);
+            this.label9.Size = new System.Drawing.Size(49, 18);
             this.label9.TabIndex = 69;
             this.label9.Text = "PRINT";
             // 
@@ -330,22 +345,45 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(370, 18);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(495, 78);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 67);
+            this.button1.Size = new System.Drawing.Size(125, 82);
             this.button1.TabIndex = 68;
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(640, 54);
+            this.panel3.TabIndex = 89;
+            // 
+            // label10
+            // 
+            this.label10.AllowDrop = true;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label10.Location = new System.Drawing.Point(13, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(161, 29);
+            this.label10.TabIndex = 84;
+            this.label10.Text = "Service Detail";
+            // 
             // ServiceDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(482, 500);
+            this.ClientSize = new System.Drawing.Size(643, 665);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.backlabel);
@@ -358,6 +396,7 @@
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ServiceDetail";
             this.Text = "ServiceDetail";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ServiceDetail_FormClosing);
@@ -367,6 +406,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +437,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label10;
     }
 }

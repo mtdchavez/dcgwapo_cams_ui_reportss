@@ -41,10 +41,11 @@
             // 
             this.branchID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.branchID.FormattingEnabled = true;
-            this.branchID.ItemHeight = 29;
-            this.branchID.Location = new System.Drawing.Point(117, 29);
+            this.branchID.ItemHeight = 36;
+            this.branchID.Location = new System.Drawing.Point(150, 41);
+            this.branchID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.branchID.Name = "branchID";
-            this.branchID.Size = new System.Drawing.Size(189, 37);
+            this.branchID.Size = new System.Drawing.Size(251, 44);
             this.branchID.TabIndex = 0;
             // 
             // Branchnm
@@ -53,9 +54,10 @@
             this.Branchnm.BackColor = System.Drawing.Color.Transparent;
             this.Branchnm.Font = new System.Drawing.Font("Bahnschrift SemiBold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Branchnm.ForeColor = System.Drawing.Color.Transparent;
-            this.Branchnm.Location = new System.Drawing.Point(10, 29);
+            this.Branchnm.Location = new System.Drawing.Point(20, 43);
+            this.Branchnm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Branchnm.Name = "Branchnm";
-            this.Branchnm.Size = new System.Drawing.Size(101, 33);
+            this.Branchnm.Size = new System.Drawing.Size(122, 40);
             this.Branchnm.TabIndex = 69;
             this.Branchnm.Text = "Branch";
             // 
@@ -68,9 +70,10 @@
             this.Confirm.FlatAppearance.BorderSize = 0;
             this.Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Confirm.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Confirm.Location = new System.Drawing.Point(74, 182);
+            this.Confirm.Location = new System.Drawing.Point(97, 112);
+            this.Confirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Confirm.Name = "Confirm";
-            this.Confirm.Size = new System.Drawing.Size(86, 67);
+            this.Confirm.Size = new System.Drawing.Size(115, 82);
             this.Confirm.TabIndex = 70;
             this.Confirm.UseVisualStyleBackColor = false;
             this.Confirm.Click += new System.EventHandler(this.Confirm_Click);
@@ -85,9 +88,10 @@
             this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Cancel.Location = new System.Drawing.Point(155, 182);
+            this.Cancel.Location = new System.Drawing.Point(210, 112);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(95, 67);
+            this.Cancel.Size = new System.Drawing.Size(127, 82);
             this.Cancel.TabIndex = 71;
             this.Cancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Cancel.UseVisualStyleBackColor = false;
@@ -98,10 +102,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(177, 252);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(248, 198);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 14);
+            this.label2.Size = new System.Drawing.Size(52, 18);
             this.label2.TabIndex = 73;
             this.label2.Text = "Cancel";
             // 
@@ -111,25 +114,28 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(87, 252);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(124, 198);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 14);
+            this.label1.Size = new System.Drawing.Size(61, 18);
             this.label1.TabIndex = 72;
             this.label1.Text = "Confirm";
             // 
             // TransbranchPermanent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(318, 274);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(424, 255);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Confirm);
             this.Controls.Add(this.Branchnm);
             this.Controls.Add(this.branchID);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TransbranchPermanent";
             this.Text = "TransbranchPermanent";
             this.Load += new System.EventHandler(this.TransbranchPermanent_Load);

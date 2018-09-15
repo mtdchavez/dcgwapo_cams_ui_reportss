@@ -19,6 +19,9 @@ namespace WindowsFormsApp1
         public Service ref_service { get; set; }
         public Employee ref_employee { get; set; }
         public CashierCommission ref_cashiercomm { get; set; }
+        public OverallBranchSale ref_sales { get; set; }
+        public SetingsForm ref_usr_mgt { get; set; }
+        public Settings ref_settings { get; set; }
 
         public MySqlConnection conn;
 
@@ -109,6 +112,30 @@ namespace WindowsFormsApp1
         private void notifications_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void branchsale_Click(object sender, EventArgs e)
+        {
+            OverallBranchSale sales = new OverallBranchSale();
+            sales.ref_dashadmin = this;
+            sales.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SetingsForm usrmgt = new SetingsForm();
+            usrmgt.ref_dashadmin = this;
+            usrmgt.Show();
+            this.Hide();
+        }
+
+        private void settingBtn_Click(object sender, EventArgs e)
+        {
+            Settings setting = new Settings();
+            setting.ref_dashadmin = this;
+            setting.Show();
+            this.Hide();
         }
     }
 }

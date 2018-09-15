@@ -144,6 +144,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="OverallBranchSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverallBranchSale.designer.cs">
+      <DependentUpon>OverallBranchSale.cs</DependentUpon>
+    </Compile>
     <Compile Include="PastBarberSal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,12 @@
     </Compile>
     <Compile Include="SetingsForm.Designer.cs">
       <DependentUpon>SetingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="TransBranch.cs">
       <SubType>Form</SubType>
@@ -264,6 +276,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OverallBranchSale.resx">
+      <DependentUpon>OverallBranchSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PastBarberSal.resx">
       <DependentUpon>PastBarberSal.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="setingsForm.resx">
       <DependentUpon>SetingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransBranch.resx">
       <DependentUpon>TransBranch.cs</DependentUpon>

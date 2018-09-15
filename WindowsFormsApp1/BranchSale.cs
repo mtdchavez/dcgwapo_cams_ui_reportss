@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
                     {
                         conn.Open();
 
-                        String query = "CALL addBranchSale(" + GlobalVariables.User_Branch_ID + ");";
+                        String query = "CALL addBranchSale(" + GlobalVariables.User_Branch_ID + ", " + GlobalVariables.pct_sale + ");";
                         MySqlCommand comm = new MySqlCommand(query, conn);
                         comm.ExecuteNonQuery();
 
@@ -86,6 +86,11 @@ namespace WindowsFormsApp1
         private void BranchSale_Load(object sender, EventArgs e)
         {
             Rifreeesh();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

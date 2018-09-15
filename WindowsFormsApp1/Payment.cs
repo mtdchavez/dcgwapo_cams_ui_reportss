@@ -114,5 +114,10 @@ namespace WindowsFormsApp1
                 payamtTxt.Text = "0";
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

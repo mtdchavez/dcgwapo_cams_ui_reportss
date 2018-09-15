@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
                     {
                         conn.Open ();
 
-                        String query = "call addLogs(" + empIdInt + ")";
+                        String query = "call addLogs(" + empIdInt + ", "+ GlobalVariables.pct_barber +")";
                         MySqlCommand comm = new MySqlCommand(query, conn);
                         comm.ExecuteNonQuery();
 
